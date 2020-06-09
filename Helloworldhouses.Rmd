@@ -1,0 +1,52 @@
+---
+title: "foo-fighter"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(GGally) # ggpairs()
+#
+url_read <- "https://raw.github.com/wgfoote/buandata/master/data/HousePrices.csv"
+data_all <- read.csv(url_read)
+```
+
+About
+=================================
+This is JT's first flexdashboard experience
+
+Hello World!
+
+Plots
+================================
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Housing data scatterplot
+
+```{r}
+ggpairs(data_all[, 1:4])
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Data structure
+
+```{r}
+str(data_all)
+```
+
+### Data summary
+
+```{r}
+summary(data_all)
+```
+
+NewTab
+================
+oh hai
